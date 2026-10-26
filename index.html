@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bienvenue dans l'univers de Lulu Pétouille : histoires, personnages, activités et petites nouvelles pleines de fantaisie.">
+  <title>Lulu Pétouille — Un petit monde qui pétille !</title>
+  <style>
+    :root{
+      --ink:#343044; --pink:#ff8fb3; --yellow:#ffd75e; --mint:#a9e9d0;
+      --blue:#a9d9ff; --cream:#fffaf0; --purple:#c8b7ff; --white:#fff;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:"Trebuchet MS",Arial,sans-serif;line-height:1.6}
+    a{color:inherit}
+    .top-note{background:var(--ink);color:#fff;text-align:center;padding:.55rem 1rem;font-size:.9rem}
+    header{position:sticky;top:0;z-index:10;background:rgba(255,250,240,.95);backdrop-filter:blur(10px);border-bottom:2px dashed #eadcf5}
+    .nav{max-width:1100px;margin:auto;padding:.8rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;font-weight:900;font-size:1.25rem;letter-spacing:-.04em}
+    .brand-mark{display:grid;place-items:center;background:var(--yellow);width:44px;height:44px;border-radius:45% 55% 60% 40%;font-size:1.5rem;transform:rotate(-8deg);box-shadow:3px 4px 0 var(--ink)}
+    nav{display:flex;gap:1.1rem;flex-wrap:wrap}
+    nav a{text-decoration:none;font-weight:800;font-size:.95rem}
+    nav a:hover{color:#d54c83}
+    .hero{overflow:hidden;position:relative;background:var(--pink);padding:4.2rem 1.2rem 4.5rem;border-radius:0 0 48px 48px}
+    .hero-inner{max-width:1100px;margin:auto;display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:center}
+    .eyebrow{font-weight:900;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem}
+    h1{font-size:clamp(2.8rem,7vw,5.6rem);line-height:.95;letter-spacing:-.07em;margin:.8rem 0 1.2rem;max-width:680px}
+    h1 span{color:#fff;text-shadow:3px 3px 0 var(--ink);display:block}
+    .hero p{font-size:1.15rem;max-width:550px}
+    .buttons{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem}
+    .btn{display:inline-block;border:2px solid var(--ink);border-radius:999px;padding:.8rem 1.2rem;text-decoration:none;font-weight:900;box-shadow:3px 4px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+    .btn:hover{transform:translate(2px,2px);box-shadow:1px 2px 0 var(--ink)}
+    .btn-dark{background:var(--ink);color:#fff}
+    .btn-light{background:#fff}
+    .hero-art{min-height:310px;display:grid;place-items:center;position:relative}
+    .blob{width:min(320px,75vw);aspect-ratio:1;background:var(--yellow);border:3px solid var(--ink);border-radius:42% 58% 50% 50% / 48% 42% 58% 52%;display:grid;place-items:center;font-size:9rem;transform:rotate(7deg);box-shadow:9px 10px 0 var(--ink);position:relative}
+    .spark{position:absolute;font-size:2.5rem;animation:wiggle 3s ease-in-out infinite}
+    .s1{top:4%;left:4%}.s2{right:2%;top:20%;animation-delay:.5s}.s3{bottom:5%;left:10%;animation-delay:1s}
+    @keyframes wiggle{50%{transform:rotate(18deg) scale(1.12)}}
+    section{padding:4rem 1.2rem}
+    .section-inner{max-width:1100px;margin:auto}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:1.7rem}
+    h2{font-size:clamp(2rem,4vw,3rem);letter-spacing:-.05em;line-height:1.05;margin:0}
+    .section-head p{max-width:450px;margin:0}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+    .card{padding:1.4rem;border:2px solid var(--ink);border-radius:24px;box-shadow:5px 6px 0 var(--ink);min-height:250px;display:flex;flex-direction:column;align-items:flex-start}
+    .card:nth-child(1){background:var(--mint)}.card:nth-child(2){background:var(--blue)}.card:nth-child(3){background:var(--purple)}
+    .emoji{font-size:3.4rem;line-height:1;margin-bottom:1rem}
+    .card h3{font-size:1.45rem;margin:.2rem 0 .5rem}
+    .card p{margin:.2rem 0 1rem}
+    .text-link{font-weight:900;text-underline-offset:4px;margin-top:auto}
+    .strip{background:var(--yellow);border-block:2px dashed var(--ink);padding:2.2rem 1.2rem}
+    .strip-inner{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+    .strip h2{max-width:650px}
+    .news{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+    .news-card{background:#fff;border:2px solid var(--ink);border-radius:22px;padding:1.4rem}
+    .tag{display:inline-block;border-radius:999px;background:var(--pink);padding:.25rem .7rem;font-size:.8rem;font-weight:900;margin-bottom:.6rem}
+    .news-card h3{margin:.2rem 0;font-size:1.3rem}
+    .about{background:#e8ddff;border-radius:36px;padding:2rem;display:grid;grid-template-columns:.7fr 1.3fr;gap:2rem;align-items:center}
+    .about-doodle{font-size:7rem;text-align:center;transform:rotate(-8deg)}
+    footer{background:var(--ink);color:#fff;padding:2.5rem 1.2rem}
+    .footer-inner{max-width:1100px;margin:auto;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+    footer a{color:#fff}
+    .tiny{font-size:.85rem;opacity:.8}
+    .bubble{position:absolute;background:#fff;border:2px solid var(--ink);border-radius:18px;padding:.5rem .8rem;font-weight:900;right:0;bottom:13%;transform:rotate(8deg);box-shadow:3px 3px 0 var(--ink)}
+    @media(max-width:760px){
+      .nav{align-items:flex-start;flex-direction:column} nav{gap:.65rem}
+      .hero{padding-top:3rem}.hero-inner{grid-template-columns:1fr}.hero-art{min-height:260px}
+      .blob{font-size:7rem;width:230px}.section-head,.strip-inner{align-items:flex-start;flex-direction:column}
+      .cards{grid-template-columns:1fr}.news{grid-template-columns:1fr}.about{grid-template-columns:1fr;gap:.5rem}.about-doodle{font-size:5rem}
+    }
+  </style>
+</head>
+<body>
+  <div class="top-note">🌈 Coucou, les petits Pétouilles ! Bienvenue dans mon petit bazar créatif.</div>
+  <header>
+    <div class="nav">
+      <a class="brand" href="#accueil"><span class="brand-mark">💥</span><span>Lulu Pétouille</span></a>
+      <nav aria-label="Navigation principale">
+        <a href="#albums">Albums</a><a href="#personnages">Personnages</a><a href="#activites">Activités</a><a href="#actualites">Actualités</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">Un univers qui pétille ✨</div>
+          <h1>Des histoires <span>plein les poches !</span></h1>
+          <p>Entre personnages rigolos, idées qui débordent et petites aventures, pousse la porte de l'univers Lulu Pétouille. Ici, l'imagination a le droit de faire des bonds… et parfois des prouts.</p>
+          <div class="buttons"><a class="btn btn-dark" href="#albums">Explorer les albums</a><a class="btn btn-light" href="#activites">À toi de jouer !</a></div>
+        </div>
+        <div class="hero-art" aria-label="Illustration décorative de fusée fantaisie">
+          <span class="spark s1">✦</span><span class="spark s2">☁️</span><span class="spark s3">⭐</span>
+          <div class="blob">🚀</div><div class="bubble">Prêt·e à pétouiller ?</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="albums">
+      <div class="section-inner">
+        <div class="section-head"><div><div class="eyebrow">À lire et à relire</div><h2>Les albums 📚</h2></div><p>Des histoires à partager, des pages à regarder et des idées qui continuent de gigoter après la dernière page.</p></div>
+        <div class="cards">
+          <article class="card"><div class="emoji">🧦</div><h3>Une chaussette, ça sert à quoi ?</h3><p>Une chaussette peut cacher bien des surprises… surtout quand on laisse son imagination prendre le dessus !</p><a class="text-link" href="#contact">Découvrir l'album ↗</a></article>
+          <article class="card"><div class="emoji">💩</div><h3>Caca, prout et compagnie !</h3><p>Avec Léo, le pot devient le théâtre d'une aventure pleine de petites bêtises et de grands éclats de rire.</p><a class="text-link" href="#contact">Découvrir l'album ↗</a></article>
+          <article class="card"><div class="emoji">🎃</div><h3>Les aventures d'Una</h3><p>Une petite fille, une nuit d'Halloween et juste ce qu'il faut de frissons pour faire pétiller les yeux.</p><a class="text-link" href="#contact">Découvrir l'histoire ↗</a></article>
+        </div>
+      </div>
+    </section>
+
+    <div class="strip" id="personnages">
+      <div class="strip-inner"><div><div class="eyebrow">La bande à Lulu</div><h2>Des personnages hauts en couleur, et pas toujours très sages !</h2></div><a class="btn btn-light" href="#contact">Rencontrer la bande ↗</a></div>
+    </div>
+
+    <section id="activites">
+      <div class="section-inner">
+        <div class="section-head"><div><div class="eyebrow">Crayons, ciseaux, imagination</div><h2>Le coin des activités 🎨</h2></div><p>Pour dessiner, inventer, bricoler et faire travailler les petites cellules grises… sans oublier les doigts pleins de feutre.</p></div>
+        <div class="cards">
+          <article class="card"><div class="emoji">🖍️</div><h3>À tes crayons !</h3><p>Imagine un personnage farfelu, donne-lui un nom et dessine son expression la plus drôle.</p><a class="text-link" href="#contact">Voir les idées ↗</a></article>
+          <article class="card"><div class="emoji">✂️</div><h3>Fabrique ton bazar</h3><p>Des activités créatives simples à faire avec un adulte et du matériel du quotidien.</p><a class="text-link" href="#contact">Bientôt par ici ↗</a></article>
+          <article class="card"><div class="emoji">💭</div><h3>Invente une histoire</h3><p>Choisis un héros, un endroit improbable et un objet complètement inutile. Et hop, l'histoire démarre !</p><a class="text-link" href="#contact">Lancer l'idée ↗</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="actualites" style="padding-top:1rem">
+      <div class="section-inner">
+        <div class="section-head"><div><div class="eyebrow">Les nouvelles du terrier</div><h2>Ça bouge chez Lulu ! 🐾</h2></div><p>Les coulisses, les dessins en cours et les petites nouvelles du monde Pétouille.</p></div>
+        <div class="news">
+          <article class="news-card"><span class="tag">Dans l'atelier</span><h3>Des crayons qui chauffent !</h3><p>Les idées s'accumulent, les dessins avancent et certains personnages refusent catégoriquement de rester dans les marges.</p></article>
+          <article class="news-card"><span class="tag">Petite annonce</span><h3>Le site prend vie</h3><p>Cette première version est le début de l'aventure. De nouvelles pages, activités et surprises viendront au fil du temps.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-inner about">
+        <div class="about-doodle">🐸✨</div>
+        <div><div class="eyebrow">Un petit mot ?</div><h2>On se retrouve bientôt !</h2><p>Merci d'être passé·e dans l'univers de Lulu Pétouille. Ce site est une première maison pour les histoires, les personnages et les idées qui n'attendent qu'à grandir.</p><p><strong>À personnaliser :</strong> ajoute ici ton adresse e-mail ou le lien vers ta page Facebook quand tu seras prête.</p><a class="btn btn-dark" href="#accueil">Retour en haut ↑</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner"><div><strong>💥 Lulu Pétouille</strong><div class="tiny">Des histoires, des dessins et un joyeux bazar créatif.</div></div><div class="tiny">© <span id="year">2026</span> Lulu Pétouille · Fait avec imagination 💛</div></div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+LULU PÉTOUILLE — PREMIÈRE VERSION DU SITE
+
+Fichier principal : index.html
+
+Pour voir le site :
+1. Décompresse le fichier ZIP.
+2. Ouvre le dossier.
+3. Double-clique sur index.html : il s'ouvrira dans ton navigateur.
+
+Le site fonctionne sans abonnement, sans installation et sans connexion Internet une fois téléchargé.
+Pour le publier gratuitement sur Internet, on pourra ensuite utiliser GitHub Pages ou Netlify.
+
+À personnaliser ensuite :
+- les textes et les titres des albums ;
+- les illustrations (on peut remplacer les emojis par tes dessins) ;
+- le lien Facebook et une adresse e-mail de contact ;
+- les activités et les actualités.
